@@ -36,9 +36,9 @@ Sometimes is hard to follow along a video when is surrounded by secondary inform
 
 ```mermaid
 erDiagram
-    User --|> LearningPath : creates
-    User --|> Course : creates
-    LearningPath ||--|> Course
-    Course ||--|> Notes
-    Course ||--|> Video
+    User }o--|| LearningPath : creates
+    User }o--|| Course : creates
+    LearningPath }o--o{ Course: has
+    Course |o--|| Notes: has
+    Course ||--|{ Video: has
 ```
