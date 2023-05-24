@@ -18,7 +18,7 @@ Sometimes is hard to follow along a video when is surrounded by secondary inform
 
 ### Should have
 
-- A user should be to save the current course progress
+- A user should be able to save the current course progress
 - A user should be able to rate a course 
 - A user should be able to list its courses by rating 
 
@@ -26,7 +26,19 @@ Sometimes is hard to follow along a video when is surrounded by secondary inform
 
 - A user could open an embedded code enviroment and code along with the video
 - A user could search for a YouTube video within the app
+- A user could set weekly and monthly learning goals.
 
 ### Will not have
 
 - Embeds form other platforms
+
+## Domain diagram 
+
+```mermaid
+erDiagram
+    User --|> LearningPath : creates
+    User --|> Course : creates
+    LearningPath ||--|> Course
+    Course ||--|> Notes
+    Course ||--|> Video
+```
