@@ -42,3 +42,49 @@ erDiagram
     Course |o--|| Notes: has
     Course ||--|{ Video: has
 ```
+
+### Entity Relationship Diagram
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+erDiagram
+    User }o--|| LearningPath : creates
+    User {
+        int id PK
+        text username
+        text first_name
+        text second_name
+        text password
+    }
+    User }o--|| Course : creates
+    Course {
+        int id PK
+        text name
+        text description
+        int rating
+        int user_id FK
+        int path_id FK
+    }
+    LearningPath }o--o{ Course: has
+    LearningPath {
+        int id PK
+        text name
+        text description
+        int rating
+        int user_id FK
+    }
+    Course |o--|| Notes: has
+    Notes {
+        int id PK
+        text content
+        int course_id FK
+    }
+    Course ||--|{ Video: has
+    Video {
+        int id PK
+        text url
+        int time
+        int course_id FK
+    }
+
+```
